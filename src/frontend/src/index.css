@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Earth tone palette for SS Crafts */
+    --background: 0.97 0.01 75;
+    --foreground: 0.2 0.04 50;
+
+    --card: 0.97 0.01 75;
+    --card-foreground: 0.2 0.04 50;
+
+    --popover: 0.97 0.01 75;
+    --popover-foreground: 0.2 0.04 50;
+
+    /* Terracotta primary */
+    --primary: 0.55 0.15 45;
+    --primary-foreground: 0.97 0.01 75;
+
+    /* Teal secondary */
+    --secondary: 0.5 0.08 193;
+    --secondary-foreground: 0.97 0.01 75;
+
+    --muted: 0.92 0.02 60;
+    --muted-foreground: 0.55 0.03 55;
+
+    /* Mustard accent */
+    --accent: 0.7 0.14 76;
+    --accent-foreground: 0.2 0.04 50;
+
+    --destructive: 0.55 0.2 25;
+    --destructive-foreground: 0.97 0.01 75;
+
+    --border: 0.87 0.02 60;
+    --input: 0.87 0.02 60;
+    --ring: 0.55 0.15 45;
+
+    --radius: 0.5rem;
+
+    /* Custom craft brand tokens */
+    --terracotta: 0.55 0.15 45;
+    --teal: 0.5 0.08 193;
+    --mustard: 0.7 0.14 76;
+    --cream: 0.97 0.01 75;
+    --brown-dark: 0.2 0.04 50;
+    --brown-mid: 0.55 0.03 55;
+
+    --chart-1: 0.55 0.15 45;
+    --chart-2: 0.5 0.08 193;
+    --chart-3: 0.7 0.14 76;
+    --chart-4: 0.45 0.1 35;
+    --chart-5: 0.6 0.06 180;
+
+    --sidebar: 0.2 0.04 50;
+    --sidebar-foreground: 0.97 0.01 75;
+    --sidebar-primary: 0.55 0.15 45;
+    --sidebar-primary-foreground: 0.97 0.01 75;
+    --sidebar-accent: 0.5 0.08 193;
+    --sidebar-accent-foreground: 0.97 0.01 75;
+    --sidebar-border: 0.3 0.04 50;
+    --sidebar-ring: 0.55 0.15 45;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+  }
+}
+
+/* Scroll-reveal animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navbar scroll effect */
+.navbar-scrolled {
+  background: oklch(0.97 0.01 75 / 0.95) !important;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 20px oklch(0.2 0.04 50 / 0.08);
+}
+
+/* Gallery card hover */
+.gallery-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 40px oklch(0.2 0.04 50 / 0.2);
+}
+
+/* Feature card hover */
+.feature-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px oklch(0.2 0.04 50 / 0.15);
+}
